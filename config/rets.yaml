@@ -1,0 +1,235 @@
+# Schema Mapping
+# Major Names: Properties, Participants, Offices
+
+# Properties 
+    # ListPrice (listings.xsd) IDX.xsd - Listing/ListingPricing/ListPrice
+    # BedsTotal (Building.xsd - RoomsType) IDX.xsd Property/PublicRecord/Characteristics/BedsTotal
+    # BathsTotal (Building.xsd - RoomsType)IDX.xsd Property/PublicRecord/Characteristics/BathsTotal
+    # City - IDX.xsd - City
+    # PostalCode Property/Address/PostalCode
+    # StateOrProvince - Idx.xsd
+    # ListingStatus - Listings.xsd - IDX.xsd - Listing/ListingStatus/RetsStatus
+    # StreetName - IDX.xsd - Property/Address/StreetName
+    # StreetNumber - IDX.xsd - Property/Address/StreetNumber
+    # YearBuilt - IDX.xsd - Property/PublicRecord/Characteristics/YearBuilt
+    # AreaTotal Listings.xsd - IDX.xsd - Property/AreaTotal (do not confuse with MLSArea)
+    # ModificationTimestamp - Listings.xsd | Participants.xsd
+
+# Participants
+    # FirstName - Person.xsd
+    # LastName - Person.xsd
+    # ParticipantKey - Participants.xsd
+ 
+
+activeserver:
+    server:
+        name: CRT
+        loginurl: http://demo.crt.realtors.org:6103/rets/login
+        user: Joe
+        password: Schmoe
+    types:
+        Properties: 
+            defaultcategory: res|com
+            aliases:
+                alias: res|com
+        Participants: 
+            defaultcategory:agt
+    Categories:
+        res:
+            resource: Property
+            class: RES
+            search_parameters:
+                ListPrice: ListPrice
+                BedsTotal: Bedrooms
+                BathsTotal: Baths
+                City: City
+                PostalCode: ZipCode
+                StateOrProvince: State
+                ListingStatus: Status
+                StreetName: StreetName
+                StreetNumber: StreetNumber
+                YearBuilt: YearBuilt
+                AreaTotal: SqFt
+                ModificationTimestamp: ModificationTimestamp
+            select_fields:
+                ListPrice: ListPrice
+                BedsTotal: Bedrooms
+                BathsTotal: Baths
+                City: City
+                PostalCode: ZipCode
+                StateOrProvince: State
+                ListingStatus: Status
+                StreetName: StreetName
+                StreetNumber: StreetNumber
+                YearBuilt: YearBuilt
+                AreaTotal: SqFt
+                ModificationTimestamp: ModificationTimestamp
+        com:
+            resource: Property
+            class: COM
+            search_parameters:
+                ListPrice: ListPrice
+                City: City
+                PostalCode: ZipCode
+                StateOrProvince: State
+                ListingStatus: Status
+                StreetName: StreetName
+                StreetNumber: StreetNumber
+                YearBuilt: YearBuilt
+                AreaTotal: SqFt
+                ModificationTimestamp: ModificationTimestamp
+            select_fields:
+                ListPrice: ListPrice
+                City: City
+                PostalCode: ZipCode
+                StateOrProvince: State
+                ListingStatus: Status
+                StreetName: StreetName
+                StreetNumber: StreetNumber
+                YearBuilt: YearBuilt
+                AreaTotal: SqFt
+                ModificationTimestamp: ModificationTimestamp
+        agt:
+            resource: Agent
+            class: AGT
+            search_parameters:
+                ParticipantKey: AgentID
+                FirstName: FirstName
+                LastName: LastName
+            select_fields:
+                ParticipantKey: AgentID
+                FirstName: FirstName
+                LastName: LastName
+inactiveserver:
+    server:
+        name: MRED
+        loginurl: http://mredllc-rets.connectmls.com:80/rets/server/login
+        user: USER
+        password: PASSWORD
+    types:
+        Properties: 
+            defaultcategory: res|com
+            aliases:
+                alias: res|com
+        Participants: 
+            defaultcategory: agt
+    Categories:
+        res:
+            resource: Property
+            class: ResidentialProperty
+            search_parameters:
+                ListPrice: LP #ListPrice
+                BedsTotal: BR #Beds
+                BathsTotal: BTH #Baths
+                City: CIT #City
+                PostalCode: ZP #PostalCode
+                StateOrProvince: STATE #
+                ListingStatus: ST #ListingStatus
+                StreetName: STR #StreetName
+                StreetNumber: HSN #StreetNumber
+                YearBuilt: BLT #YearBuilt
+                AreaTotal: ASF #LivingArea
+                ModificationTimestamp: RECORDMODDATE
+            select_fields:
+                ListPrice: LP #ListPrice
+                BedsTotal: BR #Beds
+                BathsTotal: BTH #Baths
+                City: CIT #City
+                PostalCode: ZP #PostalCode
+                StateOrProvince: STATE #
+                ListingStatus: ST #ListingStatus
+                StreetName: STR #StreetName
+                StreetNumber: HSN #StreetNumber
+                YearBuilt: BLT #YearBuilt
+                AreaTotal: ASF #LivingArea
+                ModificationTimestamp: RECORDMODDATE
+        com:
+            resource: Property
+            class: CommercialProperty
+            search_parameters:
+                ListPrice: LP #ListPrice
+                City: CIT #City
+                PostalCode: ZP #PostalCode
+                StateOrProvince: STATE #
+                ListingStatus: ST #ListingStatus
+                StreetName: STR #StreetName
+                StreetNumber: HSN #StreetNumber
+                YearBuilt: BLT #YearBuilt
+                AreaTotal: NRA #NetRentableArea
+                ModificationTimestamp: RECORDMODDATE
+            select_fields:
+                ListPrice: LP #ListPrice
+                City: CIT #City
+                PostalCode: ZP #PostalCode
+                StateOrProvince: STATE #
+                ListingStatus: ST #ListingStatus
+                StreetName: STR #StreetName
+                StreetNumber: HSN #StreetNumber
+                YearBuilt: BLT #YearBuilt
+                AreaTotal: NRA #NetRentableArea
+                ModificationTimestamp: RECORDMODDATE
+        agt:
+            resource: Agent
+            class: Agent
+            search_parameters:
+                ParticipantKey: USERID
+                FirstName: FIRSTNAME
+                LastName: LASTNAME
+            select_fields:
+                ParticipantKey: USERID
+                FirstName: FIRSTNAME
+                LastName: LASTNAME
+inactiveserver:
+    server:
+        name: Metrolist (Denver)
+        loginurl: http://devrets20.metrolist.com/rets2003/login.aspx
+        user: USER
+        password: PASSWORD
+    types:
+        Properties: 
+            defaultcategory: RES
+            aliases:
+                alias: RES
+        Participants: 
+            defaultcategory: AGT
+    Categories:
+        res:
+            resource: Property
+            class: RES
+            search_parameters:
+                ListPrice: SEARCH_PRICE
+                BedsTotal: BEDROOMS_TOTAL
+                BathsTotal: BATHS_TOTAL
+                City: CITY
+                PostalCode: ZIP_CODE
+                # StateOrProvince: METROLIST HAS NO STATE FIELD - ALWAYS CO
+                ListingStatus: STATUS
+                StreetName: STREET_NAME
+                StreetNumber: ADDRESS_NUM
+                YearBuilt: YEAR_
+                AreaTotal: AREA
+                ModificationTimestamp: CAVEAT_DATE
+            select_fields:
+                ListPrice: SEARCH_PRICE
+                BedsTotal: BEDROOMS_TOTAL
+                BathsTotal: BATHS_TOTAL
+                City: CITY
+                PostalCode: ZIP_CODE
+                # StateOrProvince: METROLIST HAS NO STATE FIELD - ALWAYS CO
+                ListingStatus: STATUS
+                StreetName: STREET_NAME
+                StreetNumber: ADDRESS_NUM
+                YearBuilt: YEAR_
+                ModificationTimestamp: CAVEAT_DATE
+                AreaTotal: AREA
+        agt:
+            resource: Agent
+            class: AGT
+            search_parameters:
+                ParticipantKey: AGENT
+                FirstName: FIRST_NAME
+                LastName: LAST_NAME 
+            select_fields:
+                ParticipantKey: AGENT
+                FirstName: FIRST_NAME
+                LastName: LAST_NAME         
