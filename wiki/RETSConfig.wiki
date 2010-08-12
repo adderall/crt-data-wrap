@@ -1,5 +1,0 @@
-#summary How To Configure Data Wrap
-
-= Introduction =
-
-This page discusses how the rets.yaml file can be configured to pull from RETS servers to create Atom feeds as well as how to perform queries against the feeds.
