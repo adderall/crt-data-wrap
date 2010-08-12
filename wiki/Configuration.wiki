@@ -1,11 +1,28 @@
-#summary One-sentence summary of this page.
+#summary How to configure and interact with Data Wrap proxy
+#labels Phase-Configuration
 
 = Introduction =
 
-Add your content here.
+This page discusses how the rets.yaml file can be configured to pull from RETS servers to create Atom feeds as well as how to interact with the Atom feeds and perform queries.
+
+== Configuring ==
+
+Proxy configuration is done by modifying the rets.yaml file.  In this file you can set up RETS servers, only one of which can be active at any time.  You must restart the server to trigger the configuration file to be restarted
+
+ The alias field allows you to set up keywords for categories that span multiple class types.  When implemented the proxy will run multiple searches, aggregate the results and return them in a single result set.
+
+There is documentation about the different fields and why their nomenclature was chosen at the top of rets.yaml.
+
+You can have multiple servers defined, the top server labeled “activeserver” is the server that will be used.
+
+The default yaml file has CRT, MRED, and Metrolist (Denver) as examples, but there is not valid login information for any server except CRT.
+
+The default yaml file covers res, com, and agt classes but you can define any combination of resource and class by following the template provided.
+
+The fields on the left are the fields that users should use to interact with your proxy, the field names on the right are the field names that will be sent to/selected from the RETS server.
 
 
-== Interacting With Atom Feeds ==
+== Interacting ==
 
 Use any browser interface to conduct queries against the proxy server.  
 
