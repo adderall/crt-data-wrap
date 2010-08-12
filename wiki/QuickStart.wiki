@@ -21,7 +21,7 @@ Once the dependencies have been install, download Data Wrap and unzip it.  Go in
 
 If everything has been installed correctly Django should start up.
 
-Now to check that Django is running Data Wrap, go to the URL: [127.0.0.1:8000/Translator/Properties/-/res/?ListPrice=250000].
+Now to check that Django is running Data Wrap, go to the URL: [http://127.0.0.1:8000/Translator/Properties/-/res/?ListPrice=250000].
 
 == Installing Into Existing Django Project ==
 If you already have a Django project you wish to run Data Wrap in do the following.
