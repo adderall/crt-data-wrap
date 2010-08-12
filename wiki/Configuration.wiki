@@ -5,7 +5,26 @@
 Add your content here.
 
 
-= Details =
+== Interacting With Atom Feeds ==
+
+Use any browser interface to conduct queries against the proxy server.  
+
+Here are some sample queries for the default configuration:
+
+http://127.0.0.1:8000/Translator/Properties/-/res/?ListPrice=250000
+http://127.0.0.1:8000/Translator/Properties/-/res/?BedsTotal=4%2b
+http://127.0.0.1:8000/Translator/Properties/-/res/?YearBuilt=1978-1985
+
+http://127.0.0.1:8000/Translator/Properties/-/alias/?BedsTotal=4%2b
+(with default yaml, this will search across res and com)
+
+http://127.0.0.1:8000/Translator/Properties/-/res|com/?BedsTotal=4%2b
+(this searches across res and com)
+
+http://127.0.0.1:8000/Translator/Properties/-/agt/?FirstName=a%2b
+
+
+[http://code.google.com/apis/gdata/docs/2.0/reference.html Syntax Guide]
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
