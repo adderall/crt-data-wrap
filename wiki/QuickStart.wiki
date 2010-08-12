@@ -56,4 +56,4 @@ INSTALLED_APPS = (
 }}}
 
 == Customize Configuration ==
-Once you have Data Wrap installed and running, customize your Django project as you like and also edit the rets.yaml file to pull from the RETS servers you will to make feeds from.  See [RETSConfig the RETS config page] for more details.
+Once you have Data Wrap installed and running, customize your Django project as you like and also edit the rets.yaml file to pull from the RETS servers you will to make feeds from.  See [Configuration#Configuring] for more details.
