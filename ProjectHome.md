@@ -1,0 +1,3 @@
+Data Wrap is a RETS to Atom proxy server, allowing you to serve up the results of searches on multiple RETS servers into one Atom feed.  Data Wrap allows you to define both the fields that will be shown in the feed, as well as the search parameters that added to a feed.
+
+Data Wrap is built using [Python](http://python.org) and the [Django](http://www.djangoproject.com) web framework, and uses [libRETS](http://www.crt.realtors.org/projects/rets/librets) to connect to RETS servers.  It is downloaded as a standalone Django project and can be started up and running very quickly.
